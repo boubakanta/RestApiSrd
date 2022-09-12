@@ -102,6 +102,9 @@ namespace Data.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
+                    b.Property<double>("Tva")
+                        .HasColumnType("float");
+
                     b.HasKey("DevisId");
 
                     b.HasIndex("ClientId");

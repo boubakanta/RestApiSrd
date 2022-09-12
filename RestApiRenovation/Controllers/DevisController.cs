@@ -56,6 +56,7 @@ namespace RestApiRenovation.Controllers
             devis.Status = DevisStatusModel.Encours;
             devis.DateCreatDevis = date;
             devis.DatePaiementDevis = date.AddDays(30);
+            devis.Tva = 20;
             //devis.Client = HelperAutoMap.MapToClientModel(_clientService.GetClient(devis.Client.ClientId));
             DevisEnt devisEnt = HelperAutoMap.MapToDevisEnt(devis);
 
@@ -63,6 +64,17 @@ namespace RestApiRenovation.Controllers
 
             return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + devis.DevisId,
                 devis);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult EditDevis(int id, DevisModel devisModel)
+        {
+            if (_devisService.DevisExists(id))
+            {
+                DevisEnt devisEnt = HelperAutoMap.MapToDevisEnt(devisModel);
+                return Ok(_devisService.EditDevis(devisEnt));
+            }
+            return NotFound($"The client with id : {id} was not found");
         }
     }
 }

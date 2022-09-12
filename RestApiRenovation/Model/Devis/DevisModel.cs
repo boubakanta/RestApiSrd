@@ -30,6 +30,7 @@ namespace RestApiRenovation.Model.Devis
 
         public IEnumerable<LigneDevisModel> LigneDevis { get; set; }
         public DevisStatusModel Status { get; set; }
+        public double Tva { get; set; }
 
         public double Total
         {

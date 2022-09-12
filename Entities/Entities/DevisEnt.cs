@@ -18,6 +18,7 @@ namespace Entities.Entities
         public DateTime DateModifDevis { get; set; }
         public IEnumerable<LigneDevisEnt> LigneDevis { get; set; }
         public DevisStatusEnt Status { get; set; }
+        public double Tva { get; set; }
 
         public DevisEnt()
         {

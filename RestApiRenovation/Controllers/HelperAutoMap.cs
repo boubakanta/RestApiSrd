@@ -72,7 +72,8 @@ namespace RestApiRenovation.Controllers
                 DateModifDevis = devisEnt.DateModifDevis,
                 DatePaiementDevis = devisEnt.DatePaiementDevis,
                 LigneDevis = MapToLigneDevisModel(devisEnt.LigneDevis),
-                Status = (DevisStatusModel)devisEnt.Status
+                Status = (DevisStatusModel)devisEnt.Status,
+                Tva = devisEnt.Tva
             };
             return devisModel;
         }
@@ -137,7 +138,8 @@ namespace RestApiRenovation.Controllers
                     PrixUnit = l.PrixUnit,
                     Devis = MapToDevisEnt(l.Devis)
                 }).ToList(),
-                Status = (DevisStatusEnt) devisModel.Status
+                Status = (DevisStatusEnt) devisModel.Status,
+                Tva = devisModel.Tva
             };
 
             return devisEnt;
