@@ -398,3 +398,5 @@ FodyWeavers.xsd
 *.sln.iml
 /Data/Migrations/20220910234229_tva.cs
 /Data/Migrations/20220910234229_tva.Designer.cs
+/Data/Migrations/20220912151732_categorie.cs
+/Data/Migrations/20220912151732_categorie.Designer.cs

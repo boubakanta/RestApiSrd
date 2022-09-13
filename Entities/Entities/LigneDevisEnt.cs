@@ -15,5 +15,6 @@ namespace Entities.Entities
         public int Quantite { get; set; }
         public double PrixUnit { get; set; }
         public DevisEnt Devis { get; set; }
+        public string Categorie { get; set; }
     }
 }

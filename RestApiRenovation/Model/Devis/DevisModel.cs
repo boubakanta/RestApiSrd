@@ -1,4 +1,4 @@
-﻿using RestApiRenovation.Model.Client;
+﻿ using RestApiRenovation.Model.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,7 +49,15 @@ namespace RestApiRenovation.Model.Devis
             }
         }
 
-        
+        public double Ttc 
+        { 
+            get
+            {
+                return this.Total * (1 + Tva/100);
+            }
+        }
+
+
         public int? ClientId { get; set; }
 
         public DevisModel()

@@ -145,6 +145,9 @@ namespace Data.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<string>("Categorie")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Designation")
                         .HasColumnType("nvarchar(max)");
 

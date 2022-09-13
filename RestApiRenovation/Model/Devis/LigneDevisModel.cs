@@ -12,6 +12,7 @@ namespace RestApiRenovation.Model.Devis
         public int Quantite { get; set; }
         public double PrixUnit { get; set; }
         public DevisModel Devis { get; set; }
+        public string Categorie { get; set; }
         //public int DevisId { get; set; }
 
         public LigneDevisModel()

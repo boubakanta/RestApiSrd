@@ -98,6 +98,7 @@ namespace RestApiRenovation.Controllers
                 Designation = ligneDevisEnt.Designation,
                 PrixUnit = ligneDevisEnt.PrixUnit,
                 Quantite = ligneDevisEnt.Quantite,
+                Categorie = ligneDevisEnt.Categorie
                 //Devis = MapToDevisModel(ligneDevisEnt.Devis)
             };
 
@@ -153,7 +154,8 @@ namespace RestApiRenovation.Controllers
                 Designation = ligneDevisModel.Designation,
                 Quantite = ligneDevisModel.Quantite,
                 PrixUnit = ligneDevisModel.PrixUnit,
-                Devis = HelperAutoMap.MapToDevisEnt(ligneDevisModel.Devis)
+                Devis = HelperAutoMap.MapToDevisEnt(ligneDevisModel.Devis),
+                Categorie = ligneDevisModel.Categorie
             };
 
             return ligneDevisEnt;
