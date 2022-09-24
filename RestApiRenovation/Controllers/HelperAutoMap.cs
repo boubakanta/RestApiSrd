@@ -20,7 +20,8 @@ namespace RestApiRenovation.Controllers
                 Address = clientEnt.Address,
                 //DateOfBirth = clientEnt.DateOfBirth,
                 TelephoneNumber = clientEnt.TelephoneNumber,
-                Email = clientEnt.Email
+                Email = clientEnt.Email,
+                Status = (StatusClientModel) clientEnt.Status
             };
         }
 
@@ -44,7 +45,8 @@ namespace RestApiRenovation.Controllers
                 Address = client.Address,
                 //DateOfBirth = client.DateOfBirth,
                 TelephoneNumber = client.TelephoneNumber,
-                Email = client.Email
+                Email = client.Email,
+                Status = (StatusClient) client.Status
             };
         }
 

@@ -34,7 +34,7 @@ namespace Service.business
 
         public IEnumerable<ClientEnt> GetClient()
         {
-            return _clientRepos.GetClient().OrderByDescending(c => c.ClientId);
+            return _clientRepos.GetClient().Where(cli => cli.Status == StatusClient.Active).OrderByDescending(c => c.ClientId);
         }
 
         public ClientEnt GetClient(int clientId)

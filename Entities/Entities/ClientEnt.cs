@@ -29,5 +29,12 @@ namespace Entities.Entities
 
         public string TelephoneNumber { get; set; }
         public string Email { get; set; }
+        public StatusClient Status { get; set; }
+    }
+
+    public enum StatusClient
+    {
+        Inactif = 0,
+        Active = 1,
     }
 }

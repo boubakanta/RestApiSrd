@@ -69,6 +69,9 @@ namespace Data.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
                     b.Property<string>("TelephoneNumber")
                         .HasColumnType("nvarchar(max)");
 

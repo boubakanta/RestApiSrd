@@ -14,10 +14,17 @@ namespace RestApiRenovation.Model.Client
         //public DateTime DateOfBirth { get; set; }
         public string TelephoneNumber { get; set; }
         public string Email { get; set; }
+        public StatusClientModel Status { get; set; }
 
         public string FullName
         {
             get { return FirstName + " " + LastName; }
         }
+    }
+
+    public enum StatusClientModel
+    {
+        Inactif = 0,
+        Active = 1,
     }
 }

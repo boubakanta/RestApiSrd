@@ -44,6 +44,7 @@ namespace RestApiRenovation.Controllers
         public IActionResult PostClient(ClientModel clientModel)
         {
             var clientEnt = HelperAutoMap.MapToClientEnt(clientModel);
+            clientEnt.Status = StatusClient.Active;
 
             _clientService.AddClient(clientEnt);
 
