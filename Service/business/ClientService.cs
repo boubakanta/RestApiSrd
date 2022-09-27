@@ -34,6 +34,10 @@ namespace Service.business
 
         public IEnumerable<ClientEnt> GetClient()
         {
+            ClientEnt c1 = new ClientEnt(); c1.LastName = "KANTA"; c1.FirstName = "Jules"; c1.TelephoneNumber = "0606060606";c1.ClientId = 20;
+            ClientEnt c2 = new ClientEnt(); c2.LastName = "KANTA"; c2.FirstName = "Jules"; c2.TelephoneNumber = "0606060606"; c2.Address = "auauauau";
+            bool resp = c1 == c2;
+
             return _clientRepos.GetClient().Where(cli => cli.Status == StatusClient.Active).OrderByDescending(c => c.ClientId);
         }
 

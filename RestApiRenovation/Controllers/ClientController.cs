@@ -43,13 +43,15 @@ namespace RestApiRenovation.Controllers
         [HttpPost]
         public IActionResult PostClient(ClientModel clientModel)
         {
-            var clientEnt = HelperAutoMap.MapToClientEnt(clientModel);
-            clientEnt.Status = StatusClient.Active;
+                var clientEnt = HelperAutoMap.MapToClientEnt(clientModel);
+                clientEnt.Status = StatusClient.Active;
 
-            _clientService.AddClient(clientEnt);
+                _clientService.AddClient(clientEnt);
 
-            return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + clientEnt.ClientId,
-                clientEnt);
+                return Created(HttpContext.Request.Scheme + "://"
+                    + HttpContext.Request.Host
+                    + HttpContext.Request.Path + "/"
+                    + clientEnt.ClientId, clientEnt);
         }
 
         [HttpDelete("{id}")]
@@ -68,6 +70,25 @@ namespace RestApiRenovation.Controllers
                 return Ok(_clientService.EditClient(clientEnt));
             }
             return NotFound($"The client with id : {id} was not found");
+        }
+
+        private ClientModel CheckExistClient(ClientModel clientModel)
+        {
+            IEnumerable<ClientModel> listClients = HelperAutoMap.MapToClientModel(_clientService.GetClient());
+            foreach (var client in listClients)
+            {
+                bool repo = client == clientModel;
+
+                //ClientModel c1 = new ClientModel(); c1.LastName = "KANTA"; c1.FirstName = "Jules"; c1.TelephoneNumber = "0606060606"; c1.ClientId = 20;
+                //ClientModel c2 = new ClientModel(); c2.LastName = "KANTA"; c2.FirstName = "Jules"; c2.TelephoneNumber = "0606060606"; c2.Address = "auauauau";
+                //bool resp = c1 == c2;
+
+                if (clientModel == client)
+                {
+                    return client;
+                }
+            }
+            return null;
         }
     }
 }
